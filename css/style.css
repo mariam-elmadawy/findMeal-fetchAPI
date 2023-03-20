@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;800;1000&display=swap");
+:root {
+  --bg-color: #eee;
+  --main-color: rgb(11, 186, 245);
+  --sec-color: navy;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Cairo", sans-serif;
+}
+
+.main {
+  text-align: center;
+  min-height: 100vh;
+}
+.search-area {
+  padding: 2rem 0;
+}
+.search-area h1 {
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+.search-area p {
+  color: #222;
+  line-height: 1.6;
+  margin: 8px;
+}
+input {
+  padding: 8px;
+  border: 1px solid var(--sec-color);
+  width: 300px;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+input::placeholder {
+  color: var(--sec-color);
+  text-align: center;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+}
+.search-btn {
+  background-color: var(--sec-color);
+  color: white;
+  padding: 8px;
+  border: 1px solid var(--sec-color);
+  margin-left: -5px;
+  cursor: pointer;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.search-btn i {
+  font-weight: bolder;
+}
+.meal-result {
+  border-radius: 8px;
+  margin: 0 2rem;
+}
+.meal {
+  margin: 1rem;
+}
+.meal-item {
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+
+  margin: 1rem auto;
+}
+.meal-item .meal-img img {
+  display: block;
+  width: 100%;
+}
+.meal-info {
+  margin-bottom: 1rem;
+}
+.meal-info h3 {
+  margin-bottom: 1rem;
+  color: var(--sec-color);
+}
+.meal-info a {
+  text-decoration: none;
+  color: var(--bg-color);
+  background-color: var(--main-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: bold;
+}
+.notFound {
+  display: grid;
+  grid-template-columns: 1fr !important;
+  text-align: center;
+  font-weight: bolder;
+  color: var(--sec-color);
+}
+.meal-receipe {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: var(--sec-color);
+  border-radius: 1rem;
+  width: 90%;
+  height: 90%;
+  padding: 0 2rem;
+  box-shadow: 0 2px 2px #eee;
+  display: none;
+  overflow-y: scroll;
+}
+.meal-receipe.active {
+  display: block;
+}
+.close-btn {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.meal-receipe .receipe-info,
+.receipe-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+.receipe-img img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.receipe-img a {
+  color: var(--sec-color);
+  text-decoration: none;
+  padding: 4px 8px;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .search-area {
+    margin: 0 2rem;
+  }
+  .search-area h1 {
+    font-size: 28px;
+  }
+  .search-area input {
+    width: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .meal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .meal {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
